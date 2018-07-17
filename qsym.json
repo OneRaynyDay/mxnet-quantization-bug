@@ -1,0 +1,330 @@
+{
+  "nodes": [
+    {
+      "op": "null", 
+      "name": "data", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "hybridsequential0_conv0_weight", 
+      "attrs": {
+        "__dtype__": "0", 
+        "__lr_mult__": "1.0", 
+        "__shape__": "(8, 0, 5, 5)", 
+        "__storage_type__": "0", 
+        "__wd_mult__": "1.0"
+      }, 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "hybridsequential0_conv0_bias", 
+      "attrs": {
+        "__dtype__": "0", 
+        "__init__": "zeros", 
+        "__lr_mult__": "1.0", 
+        "__shape__": "(8,)", 
+        "__storage_type__": "0", 
+        "__wd_mult__": "1.0"
+      }, 
+      "inputs": []
+    }, 
+    {
+      "op": "Convolution", 
+      "name": "hybridsequential0_conv0_fwd", 
+      "attrs": {
+        "dilate": "(1, 1)", 
+        "kernel": "(5, 5)", 
+        "layout": "NCHW", 
+        "no_bias": "False", 
+        "num_filter": "8", 
+        "num_group": "1", 
+        "pad": "(0, 0)", 
+        "stride": "(1, 1)"
+      }, 
+      "inputs": [[0, 0, 0], [1, 0, 0], [2, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "hybridsequential0_conv0_relu_fwd", 
+      "attrs": {"act_type": "relu"}, 
+      "inputs": [[3, 0, 0]]
+    }, 
+    {
+      "op": "min", 
+      "name": "hybridsequential0_conv0_relu_fwd_min", 
+      "inputs": [[4, 0, 0]]
+    }, 
+    {
+      "op": "max", 
+      "name": "hybridsequential0_conv0_relu_fwd_max", 
+      "inputs": [[4, 0, 0]]
+    }, 
+    {
+      "op": "_contrib_quantize", 
+      "name": "hybridsequential0_conv0_relu_fwd_quantize", 
+      "attrs": {"out_type": "int8"}, 
+      "inputs": [[4, 0, 0], [5, 0, 0], [6, 0, 0]]
+    }, 
+    {
+      "op": "_contrib_quantized_pooling", 
+      "name": "quantized_hybridsequential0_pool0_fwd", 
+      "attrs": {
+        "global_pool": "False", 
+        "kernel": "(2, 2)", 
+        "pad": "(0, 0)", 
+        "pool_type": "max", 
+        "pooling_convention": "valid", 
+        "stride": "(2, 2)"
+      }, 
+      "inputs": [[7, 0, 0], [7, 1, 0], [7, 2, 0]]
+    }, 
+    {
+      "op": "null", 
+      "name": "hybridsequential0_conv1_weight_quantize", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "hybridsequential0_conv1_bias_quantize", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "hybridsequential0_conv1_weight_quantize_min", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "hybridsequential0_conv1_weight_quantize_max", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "hybridsequential0_conv1_bias_quantize_min", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "hybridsequential0_conv1_bias_quantize_max", 
+      "inputs": []
+    }, 
+    {
+      "op": "_contrib_quantized_conv", 
+      "name": "quantized_hybridsequential0_conv1_fwd", 
+      "attrs": {
+        "dilate": "(1, 1)", 
+        "kernel": "(5, 5)", 
+        "layout": "NCHW", 
+        "no_bias": "False", 
+        "num_filter": "16", 
+        "num_group": "1", 
+        "pad": "(0, 0)", 
+        "stride": "(1, 1)"
+      }, 
+      "inputs": [[8, 0, 0], [9, 0, 0], [10, 0, 0], [8, 1, 0], [8, 2, 0], [11, 0, 0], [12, 0, 0], [13, 0, 0], [14, 0, 0]]
+    }, 
+    {
+      "op": "_contrib_requantize", 
+      "name": "requantize_hybridsequential0_conv1_fwd", 
+      "attrs": {
+        "max_calib_range": "13.389925", 
+        "min_calib_range": "-13.389925"
+      }, 
+      "inputs": [[15, 0, 0], [15, 1, 0], [15, 2, 0]]
+    }, 
+    {
+      "op": "_contrib_dequantize", 
+      "name": "hybridsequential0_conv1_fwd_dequantize", 
+      "inputs": [[16, 0, 0], [16, 1, 0], [16, 2, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "hybridsequential0_conv1_relu_fwd", 
+      "attrs": {"act_type": "relu"}, 
+      "inputs": [[17, 0, 0]]
+    }, 
+    {
+      "op": "min", 
+      "name": "hybridsequential0_conv1_relu_fwd_min", 
+      "inputs": [[18, 0, 0]]
+    }, 
+    {
+      "op": "max", 
+      "name": "hybridsequential0_conv1_relu_fwd_max", 
+      "inputs": [[18, 0, 0]]
+    }, 
+    {
+      "op": "_contrib_quantize", 
+      "name": "hybridsequential0_conv1_relu_fwd_quantize", 
+      "attrs": {"out_type": "int8"}, 
+      "inputs": [[18, 0, 0], [19, 0, 0], [20, 0, 0]]
+    }, 
+    {
+      "op": "_contrib_quantized_pooling", 
+      "name": "quantized_hybridsequential0_pool1_fwd", 
+      "attrs": {
+        "global_pool": "False", 
+        "kernel": "(2, 2)", 
+        "pad": "(0, 0)", 
+        "pool_type": "max", 
+        "pooling_convention": "valid", 
+        "stride": "(2, 2)"
+      }, 
+      "inputs": [[21, 0, 0], [21, 1, 0], [21, 2, 0]]
+    }, 
+    {
+      "op": "_contrib_dequantize", 
+      "name": "hybridsequential0_pool1_fwd_dequantize", 
+      "inputs": [[22, 0, 0], [22, 1, 0], [22, 2, 0]]
+    }, 
+    {
+      "op": "Reshape", 
+      "name": "hybridsequential0_flatten0_reshape0", 
+      "attrs": {"shape": "(0, -1)"}, 
+      "inputs": [[23, 0, 0]]
+    }, 
+    {
+      "op": "null", 
+      "name": "hybridsequential0_dense0_weight", 
+      "attrs": {
+        "__dtype__": "0", 
+        "__lr_mult__": "1.0", 
+        "__shape__": "(512, 0)", 
+        "__storage_type__": "0", 
+        "__wd_mult__": "1.0"
+      }, 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "hybridsequential0_dense0_bias", 
+      "attrs": {
+        "__dtype__": "0", 
+        "__init__": "zeros", 
+        "__lr_mult__": "1.0", 
+        "__shape__": "(512,)", 
+        "__storage_type__": "0", 
+        "__wd_mult__": "1.0"
+      }, 
+      "inputs": []
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "hybridsequential0_dense0_fwd", 
+      "attrs": {
+        "flatten": "True", 
+        "no_bias": "False", 
+        "num_hidden": "512"
+      }, 
+      "inputs": [[24, 0, 0], [25, 0, 0], [26, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "hybridsequential0_dense0_relu_fwd", 
+      "attrs": {"act_type": "relu"}, 
+      "inputs": [[27, 0, 0]]
+    }, 
+    {
+      "op": "null", 
+      "name": "hybridsequential0_dense1_weight", 
+      "attrs": {
+        "__dtype__": "0", 
+        "__lr_mult__": "1.0", 
+        "__shape__": "(10, 0)", 
+        "__storage_type__": "0", 
+        "__wd_mult__": "1.0"
+      }, 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "hybridsequential0_dense1_bias", 
+      "attrs": {
+        "__dtype__": "0", 
+        "__init__": "zeros", 
+        "__lr_mult__": "1.0", 
+        "__shape__": "(10,)", 
+        "__storage_type__": "0", 
+        "__wd_mult__": "1.0"
+      }, 
+      "inputs": []
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "hybridsequential0_dense1_fwd", 
+      "attrs": {
+        "flatten": "True", 
+        "no_bias": "False", 
+        "num_hidden": "10"
+      }, 
+      "inputs": [[28, 0, 0], [29, 0, 0], [30, 0, 0]]
+    }, 
+    {
+      "op": "null", 
+      "name": "softmax_label", 
+      "inputs": []
+    }, 
+    {
+      "op": "SoftmaxOutput", 
+      "name": "softmax", 
+      "inputs": [[31, 0, 0], [32, 0, 0]]
+    }
+  ], 
+  "arg_nodes": [
+    0, 
+    1, 
+    2, 
+    9, 
+    10, 
+    11, 
+    12, 
+    13, 
+    14, 
+    25, 
+    26, 
+    29, 
+    30, 
+    32
+  ], 
+  "node_row_ptr": [
+    0, 
+    1, 
+    2, 
+    3, 
+    4, 
+    5, 
+    6, 
+    7, 
+    10, 
+    13, 
+    14, 
+    15, 
+    16, 
+    17, 
+    18, 
+    19, 
+    22, 
+    25, 
+    26, 
+    27, 
+    28, 
+    29, 
+    32, 
+    35, 
+    36, 
+    37, 
+    38, 
+    39, 
+    40, 
+    41, 
+    42, 
+    43, 
+    44, 
+    45, 
+    46
+  ], 
+  "heads": [[33, 0, 0]], 
+  "attrs": {"mxnet_version": ["int", 10300]}
+}
